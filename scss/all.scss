@@ -1,0 +1,196 @@
+@import 'reset';
+@import 'variables';
+@import 'mixin';
+@import 'base';
+
+@each $name, $value in $font-sizes {
+  .fs-#{$name} {
+    font-size: $font-size * $value; 
+  }
+}
+
+@each $dim in $dimensions {
+  //迴圈四個方向
+  @each $dir in $directions {
+    @each $value in $spaces {
+      .#{nth($dim,1)}#{nth($dir,1)}-#{$value} {
+        #{nth($dim,2)}-#{nth($dir,2)}: #{$value + 'px'};
+      }
+    }
+  }
+}
+
+.py- {
+  &40 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &96 {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  &160 {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+@each $name, $width in $cols {
+  .col-#{$name} {
+    @include get-col($width);
+  }
+}
+
+.row {
+  display: flex;
+  margin-left: calc(-#{$gutter} / 2);
+  margin-right: calc(-#{$gutter} / 2);
+}
+
+.bg- {
+  &secondary {
+    background: $secondary;
+  }
+
+  &img {
+    max-width: 100%;
+    height: 920px;
+    background: url(../img/background-img.png) no-repeat center / cover;
+  }
+
+  &linear {
+    background: linear-gradient(180deg, #050014 0%, rgba(#01021E, 0.89) 100%);
+  }
+}
+
+.text- {
+  &primary {
+    color: $primary;
+  }
+
+  &dark {
+    color: $dark;
+  }
+
+  &green {
+    color: $green;
+  }
+
+  &center {
+    text-align: center;
+  }
+
+  &right {
+    text-align: right;
+  }
+}
+
+.nav {
+  display: flex;
+  color: $light;
+
+  &-link {
+    color: $light;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+.d- {
+  &block {
+    display: block;
+  }
+
+  &flex {
+    display: flex;
+  }
+}
+
+.flex- {
+  &column {
+    flex-direction: column;
+  }
+
+  &wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.justify-content- {
+  &between {
+    justify-content: space-between;
+  }
+}
+
+.align-items- {
+  &start {
+    align-items: flex-start;
+  }
+
+  &center {
+    align-items: center;
+  }
+}
+
+.w- {
+  &25 {
+    width: 25%;
+  }
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 32px;
+
+  &-primary {
+    background: $primary;
+    color: $secondary;
+
+    &:hover {
+      background: $light;
+      color: $primary;
+    }
+  }
+
+  &-secondary {
+    background: $secondary;
+    color: $primary;
+
+    &:hover {
+      background: $light;
+    }
+  }
+}
+
+.card {
+  color: $dark;
+  padding: 16px;
+  border: 1px solid $gray;
+  box-shadow: 4px 4px 4px 0px rgba($secondary, 0.08);
+}
+
+.arrow {
+  font-size: 100px;
+  color: $primary;
+}
+
+.link-icon {
+  border-radius: 40px;
+  box-shadow: 0px 4px 4px 0px rgba($secondary, 0.25);
+  
+  &:hover {
+    box-shadow: 0px 0px 16px 3px rgba(#9094FF, 0.9);
+  }
+}

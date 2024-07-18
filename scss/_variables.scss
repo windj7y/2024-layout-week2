@@ -1,0 +1,41 @@
+$primary: #FFF;
+$secondary: #000;
+$light: #D1D1D1;
+$dark: #15161D;
+$green: #00FFA3;
+$gray: #E3E3E3;
+
+$gutter: 24px;
+
+$font-size: 16px;
+$font-sizes: (
+  1: 8,
+  2: 4,
+  3: 1.5,
+  4: 1.25,
+  5: 1
+);
+
+$cols: (
+  2: 16.66667%,
+  3: 25%,
+  4: 33.33333%,
+  5: 41.66667%,
+  6: 50%,
+  7: 58.33333%,
+  8: 66.66667%,
+  9: 75%
+);
+
+$spaces: (4, 12, 16, 20, 24, 28, 32, 36, 40, 72, 96, 160);
+$dimensions: (
+  'm': 'margin',
+  'p': 'padding',
+);
+
+$directions: (
+  't': 'top', 
+  'b': 'bottom', 
+  'l': 'left', 
+  'r': 'right',
+);
